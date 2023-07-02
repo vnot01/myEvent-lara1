@@ -306,7 +306,7 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 [React-url]: https://reactjs.org/ 
 [Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
 [Angular-url]: https://angular.io/ -->
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: images-md/screenshot.png
 [Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
 [Vue-url]: https://vuejs.org/
 [Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
