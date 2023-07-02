@@ -31,11 +31,9 @@
 <br />
 <div align="center">
   <a href="https://github.com/vnot01/myEvent-lara1">
-    <img src="images-md/logo-wide.png" alt="Logo" width="80" height="80">
+    <img src="images-md/logo-wide.png" alt="Logo" width="287" height="92">
   </a>
-
-  <h3 align="center">MyEvents</h3>
-
+<!--   <h3 align="center">MyEvents</h3> -->
   <p align="center">
     An awesome projects!
     <br />
