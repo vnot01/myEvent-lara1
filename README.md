@@ -133,11 +133,15 @@ Berikut langkah bagaimana menginstal nya di Localhost.
     DB_USERNAME=<your db username>
     DB_PASSWORD=<your db password>
    ```
-5. Generate New Key
+5. Generate Database and Table
+   ```php artisan
+   php artisan migrate
+   ```
+6. Generate New Key
    ```php artisan
    php artisan key:generate
    ```
-6. Running Server
+7. Running Server
    ```php artisan
    php artisan serve
    ```
@@ -148,8 +152,17 @@ Berikut langkah bagaimana menginstal nya di Localhost.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+Login Akun:
+```Login:
+    Admin : admin@gmail.com
+    Sponsor : sponsor@gmail.com
+    User / Pengunjung / Customer : user@gmail.com
+```
+Password:
+```Password:  
+    password
+```
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
@@ -165,12 +178,13 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Add Additional Templates w/ Examples
 - [ ] Add "components" document to easily copy & paste sections of the readme
 - [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+    - [ ] English
+    - [ ] Indonesia
 
 - [x] Modul Pengguna: 
     - [x] Super Admin
     - [x] Admin
+    - [ ] Sponsor
     - [ ] Tiketing
     - [ ] Penjaga
     - [ ] Vendor
