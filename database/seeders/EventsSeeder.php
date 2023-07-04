@@ -18,16 +18,22 @@ class EventsSeeder extends Seeder
                 'tittle'=>'Event1',
                 'venue_id'=>'1',
                 'slug'=>'event1',
+                'video_link'=>'eMNRoijZPXgBVmmufYAf1vDAM2ArQCSc90SolZz8.mp4',
+                'is_featured'=>true
             ],
             [
                 'tittle'=>'Event2',
                 'venue_id'=>'1',
                 'slug'=>'event2',
+                'video_link'=>null,
+                'is_featured'=>false
             ],
             [
                 'tittle'=>'Event3',
                 'venue_id'=>'2',
                 'slug'=>'event3',
+                'video_link'=>null,
+                'is_featured'=>false
             ]
         ]);
 

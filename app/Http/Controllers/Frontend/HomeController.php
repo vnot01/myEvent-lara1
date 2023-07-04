@@ -5,8 +5,11 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Event;
 use App\Models\Frontend\Home;
+use App\Models\Venue;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Barryvdh\Debugbar\Facades\Debugbar;
 
 class HomeController extends Controller
 {
@@ -18,10 +21,18 @@ class HomeController extends Controller
         // $profileData = User::find($id);
         // $listTokens = ApiToken::latest()->paginate(5);
 
-        $eventData = DB::table('events')->get();
-        // $roles = DB::table('roles')->lists('title', 'name');
-        // $eventData = Event::all();
-        return view('frontend.home', with(compact('eventData')));
+        $eventData = Event::where('is_featured', true)->get();
+        // $eventData = DB::table('events')->where('is_featured',true)->get();
+        // $eventData = DB::table('events')->where('is_featured',true)->get(['id','tittle','venue_id']);
+        $venueID = Event::where('is_featured', true)->first()->venue_id;
+
+        $venueData = Venue::where('id',$venueID)->get();
+        // $venueData = DB::table('venues')->where('id',$venueID)->get();
+        Debugbar::info($eventData);
+        // dd($eventData);
+        Debugbar::warning($venueData);
+        // dd($venueData);
+        return view('frontend.home', with(compact('eventData','venueData')));
         // return view('frontend.home');
     }
 

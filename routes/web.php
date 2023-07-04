@@ -21,9 +21,7 @@ use PhpParser\Node\Stmt\TryCatch;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('infoserverku', function(){phpinfo();});
 Route::get('/', function () {
     return view('welcome');
 });

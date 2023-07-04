@@ -13,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('events', function (Blueprint $table) {
-            $table->id()->unique()->index();;
+            $table->id()->unique()->index();
             $table->string('tittle');
             $table->longText('description')->nullable();
             $table->text('faq')->nullable();
@@ -27,7 +27,7 @@ return new class extends Migration
             $table->time('start_time', $precision = 0)->nullable();
             $table->time('end_time', $precision = 0)->nullable();
             $table->string('repetitive')->nullable();
-            $table->boolean('featured')->nullable();
+            $table->boolean('is_featured')->nullable();
             $table->boolean('status')->default(true);
             $table->text('meta_title')->nullable();
             $table->text('meta_keywords')->nullable();

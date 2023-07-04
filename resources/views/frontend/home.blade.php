@@ -117,15 +117,29 @@ https://templatemo.com/tm-583-festava-live
                     <div class="col-lg-12 col-12 mt-auto d-flex flex-column flex-lg-row text-center">
                         <div class="date-wrap">
                             <h5 class="text-white">
+                                {{-- <i class="custom-icon bi-clock me-2"></i> --}}
+                                <i class="custom-icon bi-calendar2 me-2"></i>
+                                {{ \Carbon\Carbon::parse($event->start_date)->format('d-m-Y') }} - 
+                                {{ \Carbon\Carbon::parse($event->end_date)->format('d-m-Y') }}
+                            </h5>
+                            <h5 class="text-white">
                                 <i class="custom-icon bi-clock me-2"></i>
-                                {{ $event->start_date }} - {{ $event->end_date }}
+                                {{-- <i class="custom-icon bi-calendar2 me-2"></i> --}}
+                                {{ \Carbon\Carbon::parse($event->start_date)->format('H:i') }} - 
+                                {{ \Carbon\Carbon::parse($event->end_date)->format('H:i') }}
                             </h5>
                         </div>
 
                         <div class="location-wrap mx-auto py-3 py-lg-0">
                             <h5 class="text-white">
                                 <i class="custom-icon bi-geo-alt me-2"></i>
-                                {{ $event->venue_id  }}
+                                @forelse($venueData as $venue)
+                                    {{ $venue->tittle  }}
+                                @empty
+                                    <p class="mb-0">
+                                        <strong>No Venue</strong>
+                                    </p>
+                                @endforelse
                             </h5>
                         </div>
 
@@ -170,7 +184,8 @@ https://templatemo.com/tm-583-festava-live
                     {{-- <source src="{{ asset('../frontend/video/pexels-2022395.mp4') }}" type="video/mp4"> --}}
                     {{-- <source src="{{ asset('../storage/images/events/videos/sample-promotion.mp4') }}" type="video/mp4"> --}}
                     {{-- <source src="{{ asset('uploads/media/gLLMIFHOvNSio6zZG8RM96X2H0UMeqUoEx2ptHLL.mp4') }}" type="video/mp4"> --}}
-                    <source src="{{ asset('uploads/media/$event->start_date') }}" type="video/mp4">
+                    {{-- <source src="{{ asset('uploads/media/'.$event->video_link.")' }} type="video/mp4"> --}}
+                    <source src="<?php echo asset("uploads/media/{$event->video_link}")?>" type="video/mp4">
                     {{-- <source src="https://www.youtube-nocookie.com/embed/YUikseVI58A?controls=0&&disable_polymer=true" type="video/mp4"> --}}
                     Your browser does not support the video tag.
                 </video>
@@ -218,7 +233,7 @@ https://templatemo.com/tm-583-festava-live
 
                     <div class="col-lg-6 col-12 mb-4 mb-lg-0 d-flex align-items-center">
                         <div class="services-info">
-                            <h2 class="text-white mb-4">About Festava 2022</h2>
+                            <h2 class="text-white mb-4">About {{ config('app.name') }}</h2>
 
                             <p class="text-white">Festava Live is free CSS template provided by TemplateMo website. This
                                 layout is built on Bootstrap v5.2.2 CSS library. You are free to use this template for

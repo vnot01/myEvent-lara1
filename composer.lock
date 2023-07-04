@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3b48bb26c105a1f65f9c8ce209e775f3",
+    "content-hash": "4cdbd5db0a1f01d0667e3f86b9c7f99c",
     "packages": [
         {
             "name": "brick/math",
@@ -274,6 +274,51 @@
                 "source": "https://github.com/dflydev/dflydev-dot-access-data/tree/v3.0.2"
             },
             "time": "2022-10-27T11:44:00+00:00"
+        },
+        {
+            "name": "dillingham/nova-index-textarea",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dillingham/nova-index-textarea.git",
+                "reference": "1f38b4e425cb6e313b4d8a9581cc666ac9e358c7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dillingham/nova-index-textarea/zipball/1f38b4e425cb6e313b4d8a9581cc666ac9e358c7",
+                "reference": "1f38b4e425cb6e313b4d8a9581cc666ac9e358c7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Dillingham\\NovaTextarea\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Dillingham\\NovaTextarea\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Extends Nova textarea for index view",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/dillingham/nova-index-textarea/issues",
+                "source": "https://github.com/dillingham/nova-index-textarea/tree/master"
+            },
+            "time": "2019-02-06T17:38:43+00:00"
         },
         {
             "name": "doctrine/cache",
@@ -2144,7 +2189,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "69c9923f782f13944dbabe642d2801f8ebe176cc"
+                "reference": "6b51c6c3f155c86420d8d79882c59135806e8b64"
             },
             "require": {
                 "brick/money": "^0.5.0|^0.6.0|^0.7.0|^0.8.0",
@@ -3277,6 +3322,51 @@
                 "source": "https://github.com/MarkBaker/PHPMatrix/tree/3.0.1"
             },
             "time": "2022-12-02T22:17:43+00:00"
+        },
+        {
+            "name": "mattsplat/readmore",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mattsplat/readmore.git",
+                "reference": "061d3672dad2eac7bb8ac536d93e2c0f26dbc7ca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mattsplat/readmore/zipball/061d3672dad2eac7bb8ac536d93e2c0f26dbc7ca",
+                "reference": "061d3672dad2eac7bb8ac536d93e2c0f26dbc7ca",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Mattsplat\\Readmore\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Mattsplat\\Readmore\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field to hide long text and show when clicked.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/mattsplat/readmore/issues",
+                "source": "https://github.com/mattsplat/readmore/tree/master"
+            },
+            "time": "2019-08-28T23:06:05+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -5124,6 +5214,51 @@
                 }
             ],
             "time": "2023-03-13T14:25:33+00:00"
+        },
+        {
+            "name": "saumini/ellipsis-textarea",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nsaumini/ellipsis-textarea.git",
+                "reference": "76c39a9aeb88d3aae02eee04cd9689dcac843388"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nsaumini/ellipsis-textarea/zipball/76c39a9aeb88d3aae02eee04cd9689dcac843388",
+                "reference": "76c39a9aeb88d3aae02eee04cd9689dcac843388",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Saumini\\EllipsisTextarea\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Saumini\\EllipsisTextarea\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova textarea field with ellipsis support",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/nsaumini/ellipsis-textarea/issues",
+                "source": "https://github.com/nsaumini/ellipsis-textarea/tree/master"
+            },
+            "time": "2018-11-14T04:41:10+00:00"
         },
         {
             "name": "spatie/image-optimizer",

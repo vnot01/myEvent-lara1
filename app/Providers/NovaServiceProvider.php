@@ -10,6 +10,7 @@ use App\Nova\License;
 use App\Nova\Series;
 use App\Models\User as AppUser;
 use App\Models\Venue;
+use App\Nova\ConfigApp;
 use App\Nova\User as NovaUser;
 use App\Nova\Dashboards\Sales;
 use App\Nova\Lenses\MostValuableUsers;
@@ -127,6 +128,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 
                 MenuSection::make('Configuration', [
                     MenuItem::resource(NovaUser::class),
+                    MenuItem::make('Config App','/resources/config-apps')
                 ])->icon('user')->collapsable(),
 
                 //     MenuGroup::make('Customers', [

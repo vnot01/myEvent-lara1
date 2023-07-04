@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(VenuesSeeder::class);
         $this->call(EventsSeeder::class);
         $this->call(TicketsSeeder::class);
+        $this->call(ConfigAppSeeder::class);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
