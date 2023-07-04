@@ -19,7 +19,7 @@ class HomeController extends Controller
         // $listTokens = ApiToken::latest()->paginate(5);
 
         $eventData = DB::table('events')->get();
-        $roles = DB::table('roles')->lists('title', 'name');
+        // $roles = DB::table('roles')->lists('title', 'name');
         // $eventData = Event::all();
         return view('frontend.home', with(compact('eventData')));
         // return view('frontend.home');

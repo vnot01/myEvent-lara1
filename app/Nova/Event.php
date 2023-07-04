@@ -162,12 +162,12 @@ class Event extends Resource
             ->hideFromIndex()->showOnPreview()->prunable(),
 
             Video::make(trans('Video'), 'video_link', 'media')
-                ->rules('file', 'max:25000', 'mimes:mp4', 'mimetypes:video/mp4')
+                ->rules('file', 'max:250000', 'mimes:mp4', 'mimetypes:video/mp4')
                 ->creationRules('required')
                 ->updateRules('nullable')
                 ->hideFromIndex()
                 ->showOnPreview()
-                ->help('Upload your Video (MAKSIMAL 25MB) Format .mp4')->prunable(),
+                ->help('Upload your Video (MAX 25MB) Format .mp4')->prunable(),
             // Text::make('Video Link', 'video_link')
             // ->hideFromIndex()->sortable()->showOnPreview()->help('Type your Video Link'),
             // HasMany::make('Venues'),
