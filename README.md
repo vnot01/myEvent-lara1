@@ -113,15 +113,23 @@ Berikut langkah bagaimana menginstal nya di Localhost.
    ```sh
    git clone https://github.com/vnot01/myEvent-lara1.git
    ```
-3. Install NPM packages
+3. Move to Project Directory (myEvent-lara1)
+   ```command dir
+   cd myEvent-lara1
+   ```
+4. Install NPM packages
    ```npm
    npm install
    ```
-3. Install Composer packages
+5. Install Composer packages
    ```composer
    composer install
    ```
-4. Edit .env
+6. Copy .env.example dengan nama .env
+   ```command copy
+   cp .env.example .env
+   ```
+7. Edit .env
    ```.env
     APP_URL=http://127.0.0.1:8000
     DB_CONNECTION=mysql
@@ -131,15 +139,15 @@ Berikut langkah bagaimana menginstal nya di Localhost.
     DB_USERNAME=<your db username>
     DB_PASSWORD=<your db password>
    ```
-5. Generate Database and Table
+8. Generate Database, Table and Seeding
    ```php artisan
-   php artisan migrate
+   php artisan migrate --seed
    ```
-6. Generate New Key
+9. Generate New Key
    ```php artisan
    php artisan key:generate
    ```
-7. Running Server
+10. Running Server
    ```php artisan
    php artisan serve
    ```
@@ -150,11 +158,11 @@ Berikut langkah bagaimana menginstal nya di Localhost.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-Login Akun:
+Back End: <a href="http://127.0.0.1:8000/admin/login">Login Admin</a>
 ```Login:
-    Admin : admin@gmail.com
-    Sponsor : sponsor@gmail.com
-    User / Pengunjung / Customer : user@gmail.com
+    Super Admin : superadmin@example.com
+    Admin : admin@example.com
+    User / Pengunjung / Customer : user@example.com
 ```
 Password:
 ```Password:  
@@ -162,7 +170,7 @@ Password:
 ```
 
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+Front End: <a href="http://127.0.0.1:8000/admin/login">Login Admin</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
