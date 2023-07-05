@@ -23,7 +23,13 @@ class HomeController extends Controller
         // $listTokens = ApiToken::latest()->paginate(5);
 
         $eventData = Event::where('is_featured', true)->get();
-        $allEventData = Event::all()->get();
+        $allEventData = Event::join('venues', 'venues.id', '=', 'events.venue_id')
+        ->join('categories', 'categories.id', '=', 'events.category_id')
+        ->get([
+            'events.*',
+            'venues.tittle AS venues_tittle',
+            'categories.name AS categories_tittle',
+        ]);
         // $eventData = DB::table('events')->where('is_featured',true)->get();
         // $eventData = DB::table('events')->where('is_featured',true)->get(['id','tittle','venue_id']);
         $venueID = Event::where('is_featured', true)->first()->venue_id;
@@ -34,10 +40,13 @@ class HomeController extends Controller
         // dd($eventData);
         Debugbar::warning($venueData);
         // dd($venueData);
-        return view('frontend.home', with(compact(
+        return view('frontend.home', with(
+            compact(
             'eventData',
             'venueData',
-            'configAppData')));
+            'configAppData',
+            'allEventData',
+            )));
         // return view('frontend.home');
     }
 

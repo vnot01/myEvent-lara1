@@ -281,7 +281,7 @@ https://templatemo.com/tm-583-festava-live
                     <div class="col-12 text-center">
                         <h2 class="mb-4">Events List</h1>
                     </div>
-                    @forelse ( $eventData as $event)
+                    @forelse ( $allEventData as $allEvents)
                     <div class="col-lg-5 col-12">
                         <div class="artists-thumb">
                             <div class="artists-image-wrap">
@@ -293,7 +293,7 @@ https://templatemo.com/tm-583-festava-live
                                 {{-- <img src="< ?php echo Storage::disk("public/{$event->poster}")?>"
                                     class="artists-image img-fluid"> --}}
                                 {{-- <img src="{{ asset('storage/2/images/'.$user->profile_image) }}" /> --}}
-                                <img src="{{ asset('storage/'.$event->poster) }}"
+                                <img src="{{ asset('storage/'.$allEvents->poster) }}"
                                     class="artists-image img-fluid">
                             </div>
                             <div class="artists-hover">
@@ -302,17 +302,24 @@ https://templatemo.com/tm-583-festava-live
                                     <strong class="text-dark">Welcome to {{ config('app.name') }} | {{ now()->year }}</strong>
                                 </p> --}}
                                 <p>
-                                    <strong class="text-dark">{{ $event->tittle }}</strong>
+                                    <strong class="text-dark link-fx-2">{{ $allEvents->tittle }}</strong>
                                 </p>
                                 {{-- <p>
                                     <strong class="text-dark">{{ Str::limit("$event->description", 100, ' ...') }}</strong>
                                 </p> --}}
                                 {{-- Str::words("$post->content", 8, ' ...') --}}
                                 <p>
-                                    <strong class="text-dark">{{ Str::limit("$event->description",45, ' ...') }}</strong>
+                                    <strong class="text-dark link-fx-2 color-contrast-higher">
+                                        {{ Str::limit("$allEvents->description",100, ' ...') }}</strong>
+                                </p>
+                                <p>
+                                    <strong class="text-dark link-fx-2 color-contrast-higher">Location:</strong>
+                                    <a class="link-fx-2" href="/{{ $allEvents->venue_id }}">
+                                        <span>{{ Str::limit("$allEvents->venues_tittle",50, ' ...') }}</span>
+                                    </a>
                                 </p>
                                 <hr>
-                                <p class="artists-thumb">
+                                <p>
                                     <a class="link-fx-1 color-contrast-higher" href="ticket.html">
                                         <span>Buy Ticket</span>
                                         <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">

@@ -210,6 +210,15 @@ strong {
   transform-origin: 19px 15px;
 }
 
+.link-fx-2 {
+  color: var(--white-color);
+  font-size: medium;
+}
+
+.link-fx-2:hover {
+  color: var(--white-color);
+}
+
 
 /*---------------------------------------
   SECTION
@@ -592,6 +601,7 @@ strong {
   position: relative;
   overflow: hidden;
   margin-bottom: 30px;
+  font-size: small;
 }
 
 .artists-image {
