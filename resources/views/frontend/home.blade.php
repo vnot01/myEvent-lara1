@@ -364,10 +364,11 @@ https://templatemo.com/tm-583-festava-live
 
                                         </tr>
                                     </thead>
-
+                                    @forelse ($allEventData as $allEvents)
                                     <tbody>
                                         <tr>
-                                            <td>Day 1</td>
+                                            {{-- Carbon::createFromFormat('m/d/Y', $allEvents->start_date)->format('l'); --}}
+                                            <td>{{ \Carbon\Carbon::parse($allEvents->start_date)->format('D') }}</td>
                                             <td class="table-background-image-wrap pop-background-image">
                                                 <h3>Pop Night</h3>
                                                 <p class="mb-2">5:00 - 7:00 PM</p>
@@ -442,7 +443,7 @@ https://templatemo.com/tm-583-festava-live
 
                                         <tr>
                                             {{-- <td scope="row">Day 3</td> --}}
-                                            <td>Day 3</td>
+                                            <td>No Venue</td>
                                             <td class="table-background-image-wrap country-background-image">
                                                 <h3>Country Music</h3>
                                                 <p class="mb-2">4:30 - 7:30 PM</p>
@@ -457,6 +458,13 @@ https://templatemo.com/tm-583-festava-live
                                                 <p>By Members</p>
                                             </td>
                                         </tr>
+
+                                        {{ $venue->tittle  }}
+                                        @empty
+                                            <p class="mb-0">
+                                                <strong>No Venue</strong>
+                                            </p>
+                                        @endforelse
                                     </tbody>
                                 </table>
                             </div>
