@@ -231,22 +231,28 @@ https://templatemo.com/tm-583-festava-live
             <div class="container">
                 <div class="row">
 
+
                     <div class="col-lg-6 col-12 mb-4 mb-lg-0 d-flex align-items-center">
                         <div class="services-info">
-                            <h2 class="text-white mb-4">About {{ config('app.name') }}</h2>
-
-                            <p class="text-white">Festava Live is free CSS template provided by TemplateMo website. This
+                        @forelse($configAppData as $configApp)
+                            <h2 class="text-white mb-4">About {{ $configApp->app_name }}</h2>
+                            <p class="text-white">
+                                {{ $configApp->description }}
+                            </p>
+                            {{-- <p class="text-white">Festava Live is free CSS template provided by TemplateMo website. This
                                 layout is built on Bootstrap v5.2.2 CSS library. You are free to use this template for
                                 your commercial website.</p>
-
                             <h6 class="text-white mt-4">Once in Lifetime Experience</h6>
-
                             <p class="text-white">You are not allowed to redistribute the template ZIP file on any other
                                 website without a permission.</p>
-
                             <h6 class="text-white mt-4">Whole Night Party</h6>
-
-                            <p class="text-white">Please tell your friends about our website. Thank you.</p>
+                            <p class="text-white">Please tell your friends about our website. Thank you.</p> --}}
+                        @empty
+                        <h2 class="text-white mb-4">About {{ config('app.name') }}</h2>
+                        <p class="text-white mb-4">
+                            <strong>No Venue</strong>
+                        </p>
+                        @endforelse
                         </div>
                     </div>
 

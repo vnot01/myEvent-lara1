@@ -14,7 +14,7 @@ class ConfigAppSeeder extends Seeder
     public function run(): void
     {
         DB::table('config_apps')->insert([
-            [     
+            [
             'app_name'=>config('app.name'),
             'description'=>'<p class="text-white">Festava Live is free CSS template provided by TemplateMo website. This
             layout is built on Bootstrap v5.2.2 CSS library. You are free to use this template for
@@ -24,6 +24,7 @@ class ConfigAppSeeder extends Seeder
                 website without a permission.</p>
             <h6 class="text-white mt-4">Whole Night Party</h6>
             <p class="text-white">Please tell your friends about our website. Thank you.</p>',
+            'is_active'=>true,
             ],
         ]);
     }

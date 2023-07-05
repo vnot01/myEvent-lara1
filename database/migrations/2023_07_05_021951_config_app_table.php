@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('app_name');
             $table->longText('description')->nullable();
+            $table->boolean('is_active')->default(false);
             $table->timestamps();
         });
     }

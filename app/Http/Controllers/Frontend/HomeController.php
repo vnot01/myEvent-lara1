@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\ConfigApp;
 use App\Models\Event;
 use App\Models\Frontend\Home;
 use App\Models\Venue;
@@ -25,14 +26,17 @@ class HomeController extends Controller
         // $eventData = DB::table('events')->where('is_featured',true)->get();
         // $eventData = DB::table('events')->where('is_featured',true)->get(['id','tittle','venue_id']);
         $venueID = Event::where('is_featured', true)->first()->venue_id;
-
         $venueData = Venue::where('id',$venueID)->get();
+        $configAppData = ConfigApp::where('is_active',true)->get();
         // $venueData = DB::table('venues')->where('id',$venueID)->get();
         Debugbar::info($eventData);
         // dd($eventData);
         Debugbar::warning($venueData);
         // dd($venueData);
-        return view('frontend.home', with(compact('eventData','venueData')));
+        return view('frontend.home', with(compact(
+            'eventData',
+            'venueData',
+            'configAppData')));
         // return view('frontend.home');
     }
 
