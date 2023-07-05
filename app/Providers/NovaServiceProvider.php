@@ -131,6 +131,13 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     MenuItem::make('Config App','/resources/config-apps')
                 ])->icon('user')->collapsable(),
 
+                // MenuSection::make('Etc', [
+                //     MenuItem::externalLink('Visit Front Site', config('app.url').'/front')
+                //     ->openInNewTab(),
+                // ])->icon('user')->collapsable(),
+                MenuItem::externalLink('Visit Front Site', config('app.url').'/front')
+                ->openInNewTab(),
+                // MenuItem::externalLink('Documentation', 'https://nova.laravel.com/docs')->openInNewTab();
                 //     MenuGroup::make('Customers', [
                 //         MenuItem::lens(NovaUser::class, MostValuableUsers::class),
                 //     ]),

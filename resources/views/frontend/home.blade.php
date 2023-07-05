@@ -59,7 +59,7 @@ https://templatemo.com/tm-583-festava-live
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('frontend.home') }}">
-                    Festava Live
+                    {{ config('app.name') }}
                 </a>
 
                 <a href="{{ route('frontend.ticket') }}" class="btn custom-btn d-lg-none ms-auto me-4">Buy Ticket</a>
@@ -119,13 +119,13 @@ https://templatemo.com/tm-583-festava-live
                             <h5 class="text-white">
                                 {{-- <i class="custom-icon bi-clock me-2"></i> --}}
                                 <i class="custom-icon bi-calendar2 me-2"></i>
-                                {{ \Carbon\Carbon::parse($event->start_date)->format('d-m-Y') }} - 
+                                {{ \Carbon\Carbon::parse($event->start_date)->format('d-m-Y') }} -
                                 {{ \Carbon\Carbon::parse($event->end_date)->format('d-m-Y') }}
                             </h5>
                             <h5 class="text-white">
                                 <i class="custom-icon bi-clock me-2"></i>
                                 {{-- <i class="custom-icon bi-calendar2 me-2"></i> --}}
-                                {{ \Carbon\Carbon::parse($event->start_date)->format('H:i') }} - 
+                                {{ \Carbon\Carbon::parse($event->start_date)->format('H:i') }} -
                                 {{ \Carbon\Carbon::parse($event->end_date)->format('H:i') }}
                             </h5>
                         </div>

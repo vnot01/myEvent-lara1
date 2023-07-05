@@ -131,6 +131,7 @@ Berikut langkah bagaimana menginstal nya di Localhost.
    ```
 7. Edit .env
    ```.env
+    APP_NAME=MyEvents
     APP_URL=http://127.0.0.1:8000
     DB_CONNECTION=mysql
     DB_HOST=127.0.0.1
@@ -179,14 +180,9 @@ Front End: <a href="http://127.0.0.1:8000/admin/login">Login Admin</a>
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
 - [ ] Multi-language Support
     - [ ] English
     - [ ] Indonesia
-
 - [x] Modul Pengguna: 
     - [x] Super Admin
     - [x] Admin
@@ -196,14 +192,14 @@ Front End: <a href="http://127.0.0.1:8000/admin/login">Login Admin</a>
     - [ ] Vendor
     - [ ] Customer / Pengunjung
 - [ ] Pengguna isian data nya : 
-    - [ ] Nama
+    - [x] Nama
     - [ ] Nomor HP
-    - [ ] Email
+    - [x] Email
     - [ ] Level Pengguna
-    - [ ] Tambah Pengguna
-    - [ ] Detail Pengguna
-    - [ ] Perbaharui Pengguna
-    - [ ] Hapus Pengguna
+    - [x] Tambah Pengguna
+    - [x] Detail Pengguna
+    - [x] Perbaharui Pengguna
+    - [x] Hapus Pengguna
 - [ ] Data Customer / Pengunjung:
     - [ ] Daftar Pengunjung
     - [ ] Tambah Pengunjung
@@ -221,20 +217,22 @@ Front End: <a href="http://127.0.0.1:8000/admin/login">Login Admin</a>
     - [ ] Chart Bar Pengunjung Baru dan Pengunjung Lama
     - [ ] Cashback
 - [ ] Modul Tiket
-    - [ ] Tambah Tiket
-    - [ ] Judul
-    - [ ] Deskripsi
-    - [ ] Harga
-    - [ ] Waktu
+    - [x] Tambah Tiket
+    - [x] Judul
+    - [x] Deskripsi
+    - [x] Harga
+    - [x] Waktu
     - [ ] Daftar Tiket
-    - [ ] Perbaharui Tiket
-    - [ ] Hapus Tiket
+    - [x] Perbaharui Tiket
+    - [x] Hapus Tiket
 - [ ] Validasi
     - [ ] Validasi Tiket : Menggunakan Metode Scan Barcode QR, dari Nota
     - [ ] Cetak Tiket : Cetak PDF dan bisa Cetak Printer ada QR nya
     - [ ] Waktu Validasi
-- [ ] WA Gateway
-- [ ] SMS Gateway
+- [x] WA Gateway Apps
+  - [ ] Integrate API 
+- [x] SMS Gateway Apps
+  - [ ] Integrate API 
 - [ ] Modul QRCode/Barcode Generate QRCode/Barcode Berdasarkan Nomor Tiket dan Waktu Pembelian.
 - [ ] Scanner QRCode/Barcode
     - [ ] Check In Time
@@ -265,7 +263,7 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the GNU Affero General Public License. See *[LICENSE][License-url] for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -274,9 +272,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/vnot01/myEvent-lara1](https://github.com/vnot01/myEvent-lara1)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -313,6 +309,7 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 [Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
 [Angular-url]: https://angular.io/ -->
 [product-screenshot]: images-md/screenshot.png
+[License-url]: LICENSE
 [Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
 [Vue-url]: https://vuejs.org/
 [Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
