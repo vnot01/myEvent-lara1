@@ -30,6 +30,20 @@ class HomeController extends Controller
             'venues.tittle AS venues_tittle',
             'categories.name AS categories_tittle',
         ]);
+        /*
+        Select
+        `events`.`id`,
+        `events`.`tittle`,
+        `events`.`description`,
+        `venues`.`tittle`,
+        `categories`.`name`
+        from `events`
+        inner join `venues`
+        on `venues`.`id` = `events`.`venue_id`
+        inner join `categories`
+        on `categories`.`id` = `events`.`category_id`
+        LIMIT 100
+        */
         // $eventData = DB::table('events')->where('is_featured',true)->get();
         // $eventData = DB::table('events')->where('is_featured',true)->get(['id','tittle','venue_id']);
         $venueID = Event::where('is_featured', true)->first()->venue_id;
