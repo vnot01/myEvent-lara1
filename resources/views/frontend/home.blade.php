@@ -80,7 +80,7 @@ https://templatemo.com/tm-583-festava-live
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_3">Artists</a>
+                            <a class="nav-link click-scroll" href="#section_3">Event List</a>
                         </li>
 
                         <li class="nav-item">
@@ -88,11 +88,7 @@ https://templatemo.com/tm-583-festava-live
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_5">Pricing</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="#section_6">Contact</a>
+                            <a class="nav-link click-scroll" href="#section_5">Meet Sponsor</a>
                         </li>
                     </ul>
 
@@ -256,7 +252,7 @@ https://templatemo.com/tm-583-festava-live
                         </div>
                     </div>
 
-                    <div class="col-lg-6 col-12">
+                    {{-- <div class="col-lg-6 col-12">
                         <div class="about-text-wrap">
                             <img src="{{ asset('../frontend/images/pexels-alexander-suhorucov-6457579.jpg') }}" class="about-image img-fluid">
 
@@ -273,14 +269,233 @@ https://templatemo.com/tm-583-festava-live
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
             </div>
         </section>
 
+        <section class="event-list-section section-padding" id="section_3">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 text-center">
+                        <h2 class="mb-4">Events List</h1>
+                    </div>
+                    @forelse ( $eventData as $event)
+                    <div class="col-lg-5 col-12">
+                        <div class="artists-thumb">
+                            <div class="artists-image-wrap">
+                                {{-- images/events/thumbnail/mZyCKGo1lu3SFCSOQmxB6OGsGynk5TvTrrjXPnge.jpg --}}
+                                {{-- disk('public')->path('images/events/thumbnail') --}}
+                                {{-- < ?php echo asset("uploads/media/{$event->video_link}")?> --}}
+                                {{-- < ?php echo disk("public/{$event->poster}")?> --}}
+                                {{-- echo asset('storage/file.jpg'); //without subfolder uploads --}}
+                                {{-- <img src="< ?php echo Storage::disk("public/{$event->poster}")?>"
+                                    class="artists-image img-fluid"> --}}
+                                {{-- <img src="{{ asset('storage/2/images/'.$user->profile_image) }}" /> --}}
+                                <img src="{{ asset('storage/'.$event->poster) }}"
+                                    class="artists-image img-fluid">
+                            </div>
+                            <div class="artists-hover">
+                                {{-- <p class="d-flex me-4 mb-0">
+                                    <i class="bi-person custom-icon me-2"></i>
+                                    <strong class="text-dark">Welcome to {{ config('app.name') }} | {{ now()->year }}</strong>
+                                </p> --}}
+                                <p>
+                                    <strong class="text-dark">{{ $event->tittle }}</strong>
+                                </p>
+                                {{-- <p>
+                                    <strong class="text-dark">{{ Str::limit("$event->description", 100, ' ...') }}</strong>
+                                </p> --}}
+                                {{-- Str::words("$post->content", 8, ' ...') --}}
+                                <p>
+                                    <strong class="text-dark">{{ Str::limit("$event->description",45, ' ...') }}</strong>
+                                </p>
+                                <hr>
+                                <p class="artists-thumb">
+                                    <a class="link-fx-1 color-contrast-higher" href="ticket.html">
+                                        <span>Buy Ticket</span>
+                                        <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
+                                            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                                <circle cx="16" cy="16" r="15.5"></circle>
+                                                <line x1="10" y1="18" x2="16" y2="12"></line>
+                                                <line x1="16" y1="12" x2="22" y2="18"></line>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    @empty
+                    <p class="mb-0">
+                        <strong>No Events</strong>
+                    </p>
+                    @endforelse
 
-        <section class="artists-section section-padding" id="section_3">
+                   {{--  <div class="col-lg-5 col-12">
+                        <div class="artists-thumb">
+                            <div class="artists-image-wrap">
+                                <img src="{{ asset('../frontend/images/artists/abstral-official-bdlMO9z5yco-unsplash.jpg') }}"
+                                    class="artists-image img-fluid">
+                            </div>
+
+                            <div class="artists-hover">
+                                <p>
+                                    <strong>Name:</strong>
+                                    Rihana
+                                </p>
+
+                                <p>
+                                    <strong>Birthdate:</strong>
+                                    Feb 20, 1988
+                                </p>
+
+                                <p>
+                                    <strong>Music:</strong>
+                                    Country
+                                </p>
+
+                                <hr>
+
+                                <p class="mb-0">
+                                    <strong>Youtube Channel:</strong>
+                                    <a href="#">Rihana Official</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="artists-thumb">
+                            <img src="{{ asset('../frontend/images/artists/soundtrap-rAT6FJ6wltE-unsplash.jpg') }}"
+                                class="artists-image img-fluid">
+
+                            <div class="artists-hover">
+                                <p>
+                                    <strong>Name:</strong>
+                                    Bruno Bros
+                                </p>
+
+                                <p>
+                                    <strong>Birthdate:</strong>
+                                    October 8, 1985
+                                </p>
+
+                                <p>
+                                    <strong>Music:</strong>
+                                    Pop
+                                </p>
+
+                                <hr>
+
+                                <p class="mb-0">
+                                    <strong>Youtube Channel:</strong>
+                                    <a href="#">Bruno Official</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div> --}}
+
+                </div>
+            </div>
+        </section>
+
+        <section class="schedule-section section-padding" id="section_4">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12 text-center">
+                        <h2 class="text-white mb-4">Event Schedule</h1>
+
+                            <div class="table-responsive">
+                                <table class="schedule-table table table-dark">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Date</th>
+
+                                            <th scope="col">Wednesday</th>
+
+                                            <th scope="col">Thursday</th>
+
+                                            <th scope="col">Friday</th>
+
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Day 1</th>
+
+                                            <td class="table-background-image-wrap pop-background-image">
+                                                <h3>Pop Night</h3>
+
+                                                <p class="mb-2">5:00 - 7:00 PM</p>
+
+                                                <p>By Adele</p>
+
+                                                <div class="section-overlay"></div>
+                                            </td>
+
+                                            <td style="background-color: #F3DCD4"></td>
+
+                                            <td class="table-background-image-wrap rock-background-image">
+                                                <h3>Rock & Roll</h3>
+
+                                                <p class="mb-2">7:00 - 11:00 PM</p>
+
+                                                <p>By Rihana</p>
+
+                                                <div class="section-overlay"></div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Day 2</th>
+
+                                            <td style="background-color: #ECC9C7"></td>
+
+                                            <td>
+                                                <h3>DJ Night</h3>
+
+                                                <p class="mb-2">6:30 - 9:30 PM</p>
+
+                                                <p>By Rihana</p>
+                                            </td>
+
+                                            <td style="background-color: #D9E3DA"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <th scope="row">Day 3</th>
+
+                                            <td class="table-background-image-wrap country-background-image">
+                                                <h3>Country Music</h3>
+
+                                                <p class="mb-2">4:30 - 7:30 PM</p>
+
+                                                <p>By Rihana</p>
+
+                                                <div class="section-overlay"></div>
+                                            </td>
+
+                                            <td style="background-color: #D1CFC0"></td>
+
+                                            <td>
+                                                <h3>Free Styles</h3>
+
+                                                <p class="mb-2">6:00 - 10:00 PM</p>
+
+                                                <p>By Members</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="artists-section section-padding" id="section_5">
             <div class="container">
                 <div class="row justify-content-center">
 
@@ -388,217 +603,7 @@ https://templatemo.com/tm-583-festava-live
         </section>
 
 
-        <section class="event-list-section section-padding" id="section_3">
-            <div class="container">
-                <div class="row justify-content-center">
-
-                    <div class="col-12 text-center">
-                        <h2 class="mb-4">Events List</h1>
-                    </div>
-
-                    <div class="col-lg-5 col-12">
-                        <div class="artists-thumb">
-                            @forelse ( $eventData as $event)
-                            <div class="artists-image-wrap">
-                                <img src="{{ $event->poster }}"
-                                    class="artists-image img-fluid">
-                            </div>
-
-                            <div class="artists-hover">
-                                <p>
-                                    <strong>Name:</strong>
-                                    Madona
-                                </p>
-
-                                <p>
-                                    <strong>Birthdate:</strong>
-                                    August 16, 1958
-                                </p>
-
-                                <p>
-                                    <strong>Music:</strong>
-                                    Pop, R&amp;B
-                                </p>
-
-                                <hr>
-
-                                <p class="mb-0">
-                                    <strong>Youtube Channel:</strong>
-                                    <a href="#">Madona Official</a>
-                                </p>
-                            </div>
-                            @empty
-                            <p class="mb-0">
-                                <strong>No Events</strong>
-                            </p>
-                            @endforelse
-                        </div>
-                    </div>
-
-                    <div class="col-lg-5 col-12">
-                        <div class="artists-thumb">
-                            <div class="artists-image-wrap">
-                                <img src="{{ asset('../frontend/images/artists/abstral-official-bdlMO9z5yco-unsplash.jpg') }}"
-                                    class="artists-image img-fluid">
-                            </div>
-
-                            <div class="artists-hover">
-                                <p>
-                                    <strong>Name:</strong>
-                                    Rihana
-                                </p>
-
-                                <p>
-                                    <strong>Birthdate:</strong>
-                                    Feb 20, 1988
-                                </p>
-
-                                <p>
-                                    <strong>Music:</strong>
-                                    Country
-                                </p>
-
-                                <hr>
-
-                                <p class="mb-0">
-                                    <strong>Youtube Channel:</strong>
-                                    <a href="#">Rihana Official</a>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="artists-thumb">
-                            <img src="{{ asset('../frontend/images/artists/soundtrap-rAT6FJ6wltE-unsplash.jpg') }}"
-                                class="artists-image img-fluid">
-
-                            <div class="artists-hover">
-                                <p>
-                                    <strong>Name:</strong>
-                                    Bruno Bros
-                                </p>
-
-                                <p>
-                                    <strong>Birthdate:</strong>
-                                    October 8, 1985
-                                </p>
-
-                                <p>
-                                    <strong>Music:</strong>
-                                    Pop
-                                </p>
-
-                                <hr>
-
-                                <p class="mb-0">
-                                    <strong>Youtube Channel:</strong>
-                                    <a href="#">Bruno Official</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section class="schedule-section section-padding" id="section_4">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-12 text-center">
-                        <h2 class="text-white mb-4">Event Schedule</h1>
-
-                            <div class="table-responsive">
-                                <table class="schedule-table table table-dark">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Date</th>
-
-                                            <th scope="col">Wednesday</th>
-
-                                            <th scope="col">Thursday</th>
-
-                                            <th scope="col">Friday</th>
-
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">Day 1</th>
-
-                                            <td class="table-background-image-wrap pop-background-image">
-                                                <h3>Pop Night</h3>
-
-                                                <p class="mb-2">5:00 - 7:00 PM</p>
-
-                                                <p>By Adele</p>
-
-                                                <div class="section-overlay"></div>
-                                            </td>
-
-                                            <td style="background-color: #F3DCD4"></td>
-
-                                            <td class="table-background-image-wrap rock-background-image">
-                                                <h3>Rock & Roll</h3>
-
-                                                <p class="mb-2">7:00 - 11:00 PM</p>
-
-                                                <p>By Rihana</p>
-
-                                                <div class="section-overlay"></div>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <th scope="row">Day 2</th>
-
-                                            <td style="background-color: #ECC9C7"></td>
-
-                                            <td>
-                                                <h3>DJ Night</h3>
-
-                                                <p class="mb-2">6:30 - 9:30 PM</p>
-
-                                                <p>By Rihana</p>
-                                            </td>
-
-                                            <td style="background-color: #D9E3DA"></td>
-                                        </tr>
-
-                                        <tr>
-                                            <th scope="row">Day 3</th>
-
-                                            <td class="table-background-image-wrap country-background-image">
-                                                <h3>Country Music</h3>
-
-                                                <p class="mb-2">4:30 - 7:30 PM</p>
-
-                                                <p>By Rihana</p>
-
-                                                <div class="section-overlay"></div>
-                                            </td>
-
-                                            <td style="background-color: #D1CFC0"></td>
-
-                                            <td>
-                                                <h3>Free Styles</h3>
-
-                                                <p class="mb-2">6:00 - 10:00 PM</p>
-
-                                                <p>By Members</p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <section class="pricing-section section-padding section-bg" id="section_5">
+        <section class="pricing-section section-padding section-bg" id="section_6">
             <div class="container">
                 <div class="row">
 
@@ -681,7 +686,9 @@ https://templatemo.com/tm-583-festava-live
         </section>
 
 
-        <section class="contact-section section-padding" id="section_6">
+
+        {{--
+        <section class="contact-section section-padding" id="section_7">
             <div class="container">
                 <div class="row">
 
@@ -751,6 +758,7 @@ https://templatemo.com/tm-583-festava-live
                 </div>
             </div>
         </section>
+        --}}
     </main>
 
 
@@ -760,7 +768,7 @@ https://templatemo.com/tm-583-festava-live
                 <div class="row">
 
                     <div class="col-lg-6 col-12">
-                        <h2 class="text-white mb-lg-0">Festava Live</h2>
+                        <h2 class="text-white mb-lg-0">{{ config('app.name') }}</h2>
                     </div>
 
                     <div class="col-lg-6 col-12 d-flex justify-content-lg-end align-items-center">
@@ -808,27 +816,23 @@ https://templatemo.com/tm-583-festava-live
 
                     <ul class="site-footer-links">
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Home</a>
+                            <a class="site-footer-link click-scroll" href="#section_1">Home</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">About</a>
+                            <a class="site-footer-link click-scroll" href="#section_2">About</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Artists</a>
+                            <a class="site-footer-link click-scroll" href="#section_3">Event List</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Schedule</a>
+                            <a class="site-footer-link click-scroll" href="#section_4">Schedule</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Pricing</a>
-                        </li>
-
-                        <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Contact</a>
+                            <a class="site-footer-link click-scroll" href="#section_5">Meet Sponsor</a>
                         </li>
                     </ul>
                 </div>

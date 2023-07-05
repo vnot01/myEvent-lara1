@@ -23,6 +23,7 @@ class HomeController extends Controller
         // $listTokens = ApiToken::latest()->paginate(5);
 
         $eventData = Event::where('is_featured', true)->get();
+        $allEventData = Event::all()->get();
         // $eventData = DB::table('events')->where('is_featured',true)->get();
         // $eventData = DB::table('events')->where('is_featured',true)->get(['id','tittle','venue_id']);
         $venueID = Event::where('is_featured', true)->first()->venue_id;
