@@ -310,7 +310,7 @@ https://templatemo.com/tm-583-festava-live
                                 {{-- Str::words("$post->content", 8, ' ...') --}}
                                 <p>
                                     <strong class="text-dark link-fx-2 color-contrast-higher">
-                                        {{ Str::limit("$allEvents->description",100, ' ...') }}</strong>
+                                        {{ Str::limit("$allEvents->description",75, ' ...') }}</strong>
                                 </p>
                                 <p>
                                     <strong class="text-dark link-fx-2 color-contrast-higher">Location:</strong>
@@ -339,69 +339,6 @@ https://templatemo.com/tm-583-festava-live
                         <strong>No Events</strong>
                     </p>
                     @endforelse
-
-                   {{--  <div class="col-lg-5 col-12">
-                        <div class="artists-thumb">
-                            <div class="artists-image-wrap">
-                                <img src="{{ asset('../frontend/images/artists/abstral-official-bdlMO9z5yco-unsplash.jpg') }}"
-                                    class="artists-image img-fluid">
-                            </div>
-
-                            <div class="artists-hover">
-                                <p>
-                                    <strong>Name:</strong>
-                                    Rihana
-                                </p>
-
-                                <p>
-                                    <strong>Birthdate:</strong>
-                                    Feb 20, 1988
-                                </p>
-
-                                <p>
-                                    <strong>Music:</strong>
-                                    Country
-                                </p>
-
-                                <hr>
-
-                                <p class="mb-0">
-                                    <strong>Youtube Channel:</strong>
-                                    <a href="#">Rihana Official</a>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="artists-thumb">
-                            <img src="{{ asset('../frontend/images/artists/soundtrap-rAT6FJ6wltE-unsplash.jpg') }}"
-                                class="artists-image img-fluid">
-
-                            <div class="artists-hover">
-                                <p>
-                                    <strong>Name:</strong>
-                                    Bruno Bros
-                                </p>
-
-                                <p>
-                                    <strong>Birthdate:</strong>
-                                    October 8, 1985
-                                </p>
-
-                                <p>
-                                    <strong>Music:</strong>
-                                    Pop
-                                </p>
-
-                                <hr>
-
-                                <p class="mb-0">
-                                    <strong>Youtube Channel:</strong>
-                                    <a href="#">Bruno Official</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div> --}}
-
                 </div>
             </div>
         </section>
@@ -417,80 +354,106 @@ https://templatemo.com/tm-583-festava-live
                                 <table class="schedule-table table table-dark">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Date</th>
-
+                                            <th scope="col">Sunday</th>
+                                            <th scope="col">Monday</th>
+                                            <th scope="col">Tuesday</th>
                                             <th scope="col">Wednesday</th>
-
                                             <th scope="col">Thursday</th>
-
                                             <th scope="col">Friday</th>
+                                            <th scope="col">Saturday</th>
 
                                         </tr>
                                     </thead>
 
                                     <tbody>
                                         <tr>
-                                            <th scope="row">Day 1</th>
-
+                                            <td>Day 1</td>
                                             <td class="table-background-image-wrap pop-background-image">
                                                 <h3>Pop Night</h3>
-
                                                 <p class="mb-2">5:00 - 7:00 PM</p>
-
                                                 <p>By Adele</p>
-
                                                 <div class="section-overlay"></div>
                                             </td>
-
+                                            <td class="table-background-image-wrap pop-background-image">
+                                                <h3>Pop Night</h3>
+                                                <p class="mb-2">5:00 - 7:00 PM</p>
+                                                <p>By Adele</p>
+                                                <div class="section-overlay"></div>
+                                            </td>
+                                            <td class="table-background-image-wrap pop-background-image">
+                                                <h3>Pop Night</h3>
+                                                <p class="mb-2">5:00 - 7:00 PM</p>
+                                                <p>By Adele</p>
+                                                <div class="section-overlay"></div>
+                                            </td>
                                             <td style="background-color: #F3DCD4"></td>
-
                                             <td class="table-background-image-wrap rock-background-image">
                                                 <h3>Rock & Roll</h3>
-
                                                 <p class="mb-2">7:00 - 11:00 PM</p>
-
                                                 <p>By Rihana</p>
-
                                                 <div class="section-overlay"></div>
                                             </td>
                                         </tr>
 
                                         <tr>
-                                            <th scope="row">Day 2</th>
-
+                                            <td>Day 2</td>
                                             <td style="background-color: #ECC9C7"></td>
-
                                             <td>
                                                 <h3>DJ Night</h3>
-
                                                 <p class="mb-2">6:30 - 9:30 PM</p>
-
                                                 <p>By Rihana</p>
                                             </td>
-
                                             <td style="background-color: #D9E3DA"></td>
                                         </tr>
 
                                         <tr>
-                                            <th scope="row">Day 3</th>
-
+                                            <td>Day 3</td>
                                             <td class="table-background-image-wrap country-background-image">
                                                 <h3>Country Music</h3>
-
                                                 <p class="mb-2">4:30 - 7:30 PM</p>
-
                                                 <p>By Rihana</p>
-
                                                 <div class="section-overlay"></div>
                                             </td>
 
                                             <td style="background-color: #D1CFC0"></td>
-
                                             <td>
                                                 <h3>Free Styles</h3>
-
                                                 <p class="mb-2">6:00 - 10:00 PM</p>
+                                                <p>By Members</p>
+                                            </td>
+                                        </tr>
 
+                                        <tr>
+                                            <td>Day 3</td>
+                                            <td class="table-background-image-wrap country-background-image">
+                                                <h3>Country Music</h3>
+                                                <p class="mb-2">4:30 - 7:30 PM</p>
+                                                <p>By Rihana</p>
+                                                <div class="section-overlay"></div>
+                                            </td>
+
+                                            <td style="background-color: #D1CFC0"></td>
+                                            <td>
+                                                <h3>Free Styles</h3>
+                                                <p class="mb-2">6:00 - 10:00 PM</p>
+                                                <p>By Members</p>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            {{-- <td scope="row">Day 3</td> --}}
+                                            <td>Day 3</td>
+                                            <td class="table-background-image-wrap country-background-image">
+                                                <h3>Country Music</h3>
+                                                <p class="mb-2">4:30 - 7:30 PM</p>
+                                                <p>By Rihana</p>
+                                                <div class="section-overlay"></div>
+                                            </td>
+
+                                            <td style="background-color: #D1CFC0"></td>
+                                            <td>
+                                                <h3>Free Styles</h3>
+                                                <p class="mb-2">6:00 - 10:00 PM</p>
                                                 <p>By Members</p>
                                             </td>
                                         </tr>

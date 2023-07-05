@@ -665,11 +665,12 @@ strong {
   SCHEDULE
 -----------------------------------------*/
 .schedule-section {
-  background-image: url('../images/nainoa-shizuru-unsplash-blur.jpg');
+  background-image: url('../images/197230676_l_normal_none.png');
   background-color: #242424;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
 }
 .table-responsive {
 	filter: drop-shadow(2px 2px 4px #606060);
@@ -679,6 +680,7 @@ strong {
   border-radius: var(--border-radius-medium);
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
 .schedule-table .bg-warning {
@@ -689,14 +691,19 @@ strong {
   background-color: var(--secondary-color);
 }
 
-.schedule-table th,
+.schedule-table th {
+  /* width: 100%; */
+}
+
 .schedule-table tr,
 .schedule-table td {
   border-bottom-color: #363a3e;
-  padding: 30px;
+  padding: 5px;
 }
 
-.schedule-table tr:last-child th,
+.schedule-table tr:last-child th{
+  /* width: 100%; */
+}
 .schedule-table tr:last-child td {
   border-bottom-color: transparent;
 }
