@@ -12,4 +12,9 @@ use Spatie\Permission\Traits\HasRoles;
 class Home extends Model
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles;
+
+    protected $casts = [
+        'start_date1' => 'datetime:Y-m-d',
+        'end_date1' => 'datetime:Y-m-d',
+    ];
 }

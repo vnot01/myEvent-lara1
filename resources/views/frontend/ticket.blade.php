@@ -7,8 +7,11 @@
 
     <meta name="description" content="">
     <meta name="author" content="">
-
-    <title>Festava Live - Ticket HTML Form</title>
+    @forelse($configAppData as $configApp)
+    <title> {{ $configApp->app_name  }}</title>
+    @empty
+    <title>No App Name</title>
+    @endforelse
 
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,7 +44,15 @@ https://templatemo.com/tm-583-festava-live
                     <div class="col-lg-12 col-12 d-flex flex-wrap">
                         <p class="d-flex me-4 mb-0">
                             <i class="bi-person custom-icon me-2"></i>
-                            <strong class="text-dark">Welcome to Music Festival 2023</strong>
+
+                            @forelse($configAppData as $configApp)
+                            <strong class="text-dark">Welcome to {{ $configApp->app_name  }} | {{ now()->year }}</strong>
+                            @empty
+                            <p class="mb-0">
+                                <strong class="text-dark">No App Name</strong>
+                            </p>
+                            @endforelse
+                            <strong class="text-dark">Welcome to {{ config('app.name') }} | {{ now()->year }}</strong>
                         </p>
                     </div>
 
@@ -53,10 +64,14 @@ https://templatemo.com/tm-583-festava-live
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="/front">
-                    Festava Live
+                    @forelse($configAppData as $configApp)
+                        {{ config('app.name') }}
+                    @empty
+                    <strong>No App Name</strong>
+                    @endforelse
                 </a>
 
-                <a href="/front/ticket" class="btn custom-btn d-lg-none ms-auto me-4">Buy Ticket</a>
+                <a href="{{ route('frontend.ticket') }}" class="btn custom-btn d-lg-none ms-auto me-4">Buy Ticket</a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,31 +81,27 @@ https://templatemo.com/tm-583-festava-live
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.html#section_1">Home</a>
+                            <a class="nav-link click-scroll" href="{{ route('frontend.home') }}#section_1">Home</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.html#section_2">About</a>
+                            <a class="nav-link click-scroll" href="{{ route('frontend.home') }}#section_2">About</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.html#section_3">Artists</a>
+                            <a class="nav-link click-scroll" href="{{ route('frontend.home') }}#section_3">Event List</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.html#section_4">Schedule</a>
+                            <a class="nav-link click-scroll" href="{{ route('frontend.home') }}#section_4">Schedule</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.html#section_5">Pricing</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link click-scroll" href="index.html#section_6">Contact</a>
+                            <a class="nav-link click-scroll" href="{{ route('frontend.home') }}#section_5">Meet Sponsor</a>
                         </li>
                     </ul>
 
-                    <a href="/front/ticket" class="btn custom-btn d-lg-block d-none">Buy Ticket</a>
+                    <a href="{{ route('frontend.ticket') }}" class="btn custom-btn d-lg-block d-none">Buy Ticket</a>
                 </div>
             </div>
         </nav>
@@ -170,7 +181,11 @@ https://templatemo.com/tm-583-festava-live
                 <div class="row">
 
                     <div class="col-lg-6 col-12">
-                        <h2 class="text-white mb-lg-0">Festava Live</h2>
+                        @forelse($configAppData as $configApp)
+                            <h2 class="text-white mb-lg-0"> {{ config('app.name') }}</h2>
+                        @empty
+                            <h2 class="text-white mb-lg-0">No App Name</h2>
+                        @endforelse
                     </div>
 
                     <div class="col-lg-6 col-12 d-flex justify-content-lg-end align-items-center">
@@ -183,12 +198,6 @@ https://templatemo.com/tm-583-festava-live
 
                             <li class="social-icon-item">
                                 <a href="#" class="social-icon-link">
-                                    <span class="bi-apple"></span>
-                                </a>
-                            </li>
-
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link">
                                     <span class="bi-instagram"></span>
                                 </a>
                             </li>
@@ -196,12 +205,6 @@ https://templatemo.com/tm-583-festava-live
                             <li class="social-icon-item">
                                 <a href="#" class="social-icon-link">
                                     <span class="bi-youtube"></span>
-                                </a>
-                            </li>
-
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link">
-                                    <span class="bi-pinterest"></span>
                                 </a>
                             </li>
                         </ul>
@@ -218,27 +221,23 @@ https://templatemo.com/tm-583-festava-live
 
                     <ul class="site-footer-links">
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Home</a>
+                            <a class="site-footer-link click-scroll" href="{{ route('frontend.home') }}#section_1">Home</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">About</a>
+                            <a class="site-footer-link click-scroll" href="{{ route('frontend.home') }}#section_2">About</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Artists</a>
+                            <a class="site-footer-link click-scroll" href="{{ route('frontend.home') }}#section_3">Event List</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Schedule</a>
+                            <a class="site-footer-link click-scroll" href="{{ route('frontend.home') }}#section_4">Schedule</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Pricing</a>
-                        </li>
-
-                        <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Contact</a>
+                            <a class="site-footer-link click-scroll" href="{{ route('frontend.home') }}#section_5">Meet Sponsor</a>
                         </li>
                     </ul>
                 </div>
@@ -248,7 +247,7 @@ https://templatemo.com/tm-583-festava-live
 
                     <p class="text-white d-flex mb-1">
                         <a href="tel: 090-080-0760" class="site-footer-link">
-                            090-080-0760
+                            123-456-7890
                         </a>
                     </p>
 

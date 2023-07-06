@@ -22,11 +22,13 @@ use PhpParser\Node\Stmt\TryCatch;
 */
 
 Route::get('infoserverku', function(){phpinfo();});
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/front', [HomeController::class,'index'])
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [HomeController::class,'index'])
     ->name('frontend.home');
+// Route::get('/front', [HomeController::class,'index'])
+//     ->name('frontend.home');
 Route::get('/front/ticket', [TicketsController::class,'index'])
     ->name('frontend.ticket');
 

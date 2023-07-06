@@ -11,6 +11,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Barryvdh\Debugbar\Facades\Debugbar;
+use Carbon\Carbon;
+use DebugBar\DebugBar as DebugBarDebugBar;
 
 class HomeController extends Controller
 {
@@ -30,6 +32,31 @@ class HomeController extends Controller
             'venues.tittle AS venues_tittle',
             'categories.name AS categories_tittle',
         ]);
+        $venueID = Event::where('is_featured', true)->first()->venue_id;
+        // $allEvenStartDate = Event::join('venues', 'venues.id', '=', 'events.venue_id')
+        // ->join('categories', 'categories.id', '=', 'events.category_id')
+        // ->get([
+        //     'events.start_date AS start_date',
+        // ]);
+        // $trans_from = date($allEvenStartDate);
+        // $startDate = Carbon::createFromFormat('dd-mm-yy', $allEvenStartDate->start_date);
+
+        // $value= json_decode("[{'created_at':'.$allEvenStartDate.'}]")[0]->start_date;
+        // $value1= json_decode($allEvenStartDate)->start_date1;
+        // $allEvenEndDate = Event::join('venues', 'venues.id', '=', 'events.venue_id')
+        // ->join('categories', 'categories.id', '=', 'events.category_id')
+        // ->get([
+        //     'events.end_date AS end_date',
+        // ]);
+        // $value2= json_decode($allEvenEndDate)->end_date1;
+        // $start = Carbon::parse($allEvenStartDate)->format('l');
+        // $end = Carbon::parse($value2)->format('l');
+        // Debugbar::warning($trans_from);
+        // dd($trans_from);
+        
+        // $startDayOfEvent = $allEvenStartDate->start_date->format('l');
+        // $startDayOfEvent = $start->format('l');
+        // $endDayOfEvent = $end->format('l');
         /*
         Select
         `events`.`id`,
@@ -50,9 +77,10 @@ class HomeController extends Controller
         $venueData = Venue::where('id',$venueID)->get();
         $configAppData = ConfigApp::where('is_active',true)->get();
         // $venueData = DB::table('venues')->where('id',$venueID)->get();
-        Debugbar::info($eventData);
+        // Debugbar::info($eventData);
         // dd($eventData);
-        Debugbar::warning($venueData);
+        // Debugbar::warning($venueData);
+        // Debugbar::warning($start);
         // dd($venueData);
         return view('frontend.home', with(
             compact(
@@ -60,6 +88,8 @@ class HomeController extends Controller
             'venueData',
             'configAppData',
             'allEventData',
+            // 'startDayOfEvent',
+            // 'endDayOfEvent',
             )));
         // return view('frontend.home');
     }

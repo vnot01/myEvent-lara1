@@ -343,13 +343,11 @@ https://templatemo.com/tm-583-festava-live
             </div>
         </section>
 
-        <section class="schedule-section section-padding" id="section_4">
+        {{-- <section class="schedule-section section-padding" id="section_4">
             <div class="container">
                 <div class="row">
-
                     <div class="col-12 text-center">
                         <h2 class="text-white mb-4">Event Schedule</h1>
-
                             <div class="table-responsive">
                                 <table class="schedule-table table table-dark">
                                     <thead>
@@ -361,20 +359,50 @@ https://templatemo.com/tm-583-festava-live
                                             <th scope="col">Thursday</th>
                                             <th scope="col">Friday</th>
                                             <th scope="col">Saturday</th>
-
                                         </tr>
                                     </thead>
-                                    @forelse ($allEventData as $allEvents)
+                                    < ?php
+                                        // $days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];   
+                                    ?>
                                     <tbody>
                                         <tr>
-                                            {{-- Carbon::createFromFormat('m/d/Y', $allEvents->start_date)->format('l'); --}}
-                                            <td>{{ \Carbon\Carbon::parse($allEvents->start_date)->format('D') }}</td>
+                                        {{-- @foreach($days as $day) -- }}
+
+                                            @forelse ($allEventData as $allEvents)
+                                                {{-- @foreach ($endDayOfEvent as $endDay)
+                                                    @foreach ($startDayOfEvent as $startDay)
+                                                        
+                                                    @endforeach
+                                                @endforeach --}}
+                                            {{-- {{ $eventDay = \Carbon\Carbon::parse($allEvents->start_date)->format('l')}} --}}
+                                        {{-- {{ Debugbar::info($eventDay) }} --}}
+                                        {{-- {{ Debugbar::info($allEvents) }} --}}
+                                        {{-- @if($allEvents->$eventDay == $day) --}}
+                                            {{-- {{ Debugbar::info(\Carbon\Carbon::parse($allEvents->start_date)->format('l')) }} --}}
+                                            {{-- {{ Debugbar::info($allEvents) }} --}}
+                                            {{-- Carbon::createFromFormat('m/d/Y', 
+                                                $allEvents->start_date)->format('l'); -- }}
+
+                                            <td>{{ $allEvents->venues_tittle.'-'.\Carbon\Carbon::parse($allEvents->start_date)->format('l') }}</td>
                                             <td class="table-background-image-wrap pop-background-image">
-                                                <h3>Pop Night</h3>
-                                                <p class="mb-2">5:00 - 7:00 PM</p>
-                                                <p>By Adele</p>
+                                                <div class="jam"><h3>{{ $allEvents->venues_tittle  }}</h3></div>
+                                                <div class="jam"><p class="mb-2">5:00 - 7:00 PM</p></div>
+                                                <div class="jam"><p>By Adele</p>></div>                                                
                                                 <div class="section-overlay"></div>
                                             </td>
+                                        {{-- @else
+                                            <td></td>
+
+                                        @endif -- }}
+                                            @empty
+                                            <td>
+                                                <p class="mb-0">
+                                                        <strong>No Venue</strong>
+                                                </p>
+                                            </td>
+                                            @endforelse
+                                        {{-- @endforeach --}}
+                                            {{-- 
                                             <td class="table-background-image-wrap pop-background-image">
                                                 <h3>Pop Night</h3>
                                                 <p class="mb-2">5:00 - 7:00 PM</p>
@@ -393,9 +421,11 @@ https://templatemo.com/tm-583-festava-live
                                                 <p class="mb-2">7:00 - 11:00 PM</p>
                                                 <p>By Rihana</p>
                                                 <div class="section-overlay"></div>
-                                            </td>
+                                            </td> 
+                                            -- }}
                                         </tr>
 
+                                        {{-- 
                                         <tr>
                                             <td>Day 2</td>
                                             <td style="background-color: #ECC9C7"></td>
@@ -405,8 +435,10 @@ https://templatemo.com/tm-583-festava-live
                                                 <p>By Rihana</p>
                                             </td>
                                             <td style="background-color: #D9E3DA"></td>
-                                        </tr>
-
+                                        </tr> 
+                                        --}}
+                                        
+                                        {{--                                         
                                         <tr>
                                             <td>Day 3</td>
                                             <td class="table-background-image-wrap country-background-image">
@@ -422,8 +454,10 @@ https://templatemo.com/tm-583-festava-live
                                                 <p class="mb-2">6:00 - 10:00 PM</p>
                                                 <p>By Members</p>
                                             </td>
-                                        </tr>
-
+                                        </tr> 
+                                        --}}
+                                        
+                                        {{-- 
                                         <tr>
                                             <td>Day 3</td>
                                             <td class="table-background-image-wrap country-background-image">
@@ -439,10 +473,11 @@ https://templatemo.com/tm-583-festava-live
                                                 <p class="mb-2">6:00 - 10:00 PM</p>
                                                 <p>By Members</p>
                                             </td>
-                                        </tr>
-
+                                        </tr> 
+                                        --}}
+                                        {{-- 
                                         <tr>
-                                            {{-- <td scope="row">Day 3</td> --}}
+                                            {{-- <td scope="row">Day 3</td> -- }}
                                             <td>No Venue</td>
                                             <td class="table-background-image-wrap country-background-image">
                                                 <h3>Country Music</h3>
@@ -457,28 +492,23 @@ https://templatemo.com/tm-583-festava-live
                                                 <p class="mb-2">6:00 - 10:00 PM</p>
                                                 <p>By Members</p>
                                             </td>
-                                        </tr>
+                                        </tr> 
+                                        -- }}
 
-                                        {{ $venue->tittle  }}
-                                        @empty
-                                            <p class="mb-0">
-                                                <strong>No Venue</strong>
-                                            </p>
-                                        @endforelse
                                     </tbody>
                                 </table>
                             </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
 
         <section class="artists-section section-padding" id="section_5">
             <div class="container">
                 <div class="row justify-content-center">
 
                     <div class="col-12 text-center">
-                        <h2 class="mb-4">Meet Artists</h1>
+                        <h2 class="mb-4">Meet Sponsor</h1>
                     </div>
 
                     <div class="col-lg-5 col-12">
@@ -494,7 +524,7 @@ https://templatemo.com/tm-583-festava-live
                                     Madona
                                 </p>
 
-                                <p>
+                                {{-- <p>
                                     <strong>Birthdate:</strong>
                                     August 16, 1958
                                 </p>
@@ -502,7 +532,7 @@ https://templatemo.com/tm-583-festava-live
                                 <p>
                                     <strong>Music:</strong>
                                     Pop, R&amp;B
-                                </p>
+                                </p> --}}
 
                                 <hr>
 
@@ -527,7 +557,7 @@ https://templatemo.com/tm-583-festava-live
                                     Rihana
                                 </p>
 
-                                <p>
+                                {{-- <p>
                                     <strong>Birthdate:</strong>
                                     Feb 20, 1988
                                 </p>
@@ -535,7 +565,7 @@ https://templatemo.com/tm-583-festava-live
                                 <p>
                                     <strong>Music:</strong>
                                     Country
-                                </p>
+                                </p> --}}
 
                                 <hr>
 
@@ -556,7 +586,7 @@ https://templatemo.com/tm-583-festava-live
                                     Bruno Bros
                                 </p>
 
-                                <p>
+                                {{-- <p>
                                     <strong>Birthdate:</strong>
                                     October 8, 1985
                                 </p>
@@ -564,7 +594,7 @@ https://templatemo.com/tm-583-festava-live
                                 <p>
                                     <strong>Music:</strong>
                                     Pop
-                                </p>
+                                </p> --}}
 
                                 <hr>
 
@@ -581,7 +611,7 @@ https://templatemo.com/tm-583-festava-live
         </section>
 
 
-        <section class="pricing-section section-padding section-bg" id="section_6">
+        {{-- <section class="pricing-section section-padding section-bg" id="section_6">
             <div class="container">
                 <div class="row">
 
@@ -661,7 +691,7 @@ https://templatemo.com/tm-583-festava-live
 
                 </div>
             </div>
-        </section>
+        </section> --}}
 
 
 
@@ -820,7 +850,7 @@ https://templatemo.com/tm-583-festava-live
 
                     <p class="text-white d-flex mb-1">
                         <a href="tel: 090-080-0760" class="site-footer-link">
-                            090-080-0760
+                            123-456-7890
                         </a>
                     </p>
 
